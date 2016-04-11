@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class name="cn.nudt.goods.bean.Order" table="t_order" lazy="false">
+		<id length="32" name="oid" type="string" />
+		<property column="ordertime" length="19" name="ordertime"
+			type="string" />
+		<property column="total" name="total" type="double" />
+		<property column="status" name="status" type="int" />
+		<property column="address" length="1000" name="address" type="string" />
+		<many-to-one name="admin" class="cn.nudt.goods.bean.Admin"
+			column="adminId" lazy="false"/>
+		<many-to-one name="owner" class="cn.nudt.goods.bean.User"
+			column="uid" lazy="false"/>
+			
+			<!--  
+		<list name="orderItemList" lazy="false">
+			<key column="oid"></key>
+			<list-index column="orderBy"/>
+			<one-to-many class="cn.nudt.goods.bean.OrderItem" />
+		</list>
+		-->
+	</class>
+</hibernate-mapping>

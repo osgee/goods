@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+
+	<class name="cn.nudt.goods.bean.OrderItem" table="t_orderitem" lazy="false">
+		<id length="32" name="orderItemId" type="string" />
+		<property column="quantity" name="quantity" type="int" />
+		<property column="subtotal" name="subtotal" type="double" />
+		<many-to-one name="book" class="cn.nudt.goods.bean.Book" column="bid" lazy="false"></many-to-one>
+		<many-to-one name="order" class="cn.nudt.goods.bean.Order" column="oid" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="goods" location="50,50" size="171,1967">
+    <action name="Category_*" location="11,19" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="left.jsp" />
+      </result>
+    </action>
+    <action name="Book_*" location="11,111" size="150,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="faillist">
+        <resourceEdge source="faillist" routing="0" target="faillist.jsp" />
+      </result>
+      <result name="bookdesc">
+        <resourceEdge source="bookdesc" routing="0" target="desc.jsp" />
+      </result>
+    </action>
+    <action name="CartItemloadCartItems" location="11,211" size="150,104">
+      <result name="myCart" />
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="showitem">
+        <resourceEdge source="showitem" routing="0" target="showitem.jsp" />
+      </result>
+      <result name="input" />
+    </action>
+    <action name="CartItem_*" location="11,361" size="150,104">
+      <result name="myCart" />
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="showitem">
+        <resourceEdge source="showitem" routing="0" target="showitem.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="UserLogin" location="11,511" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="refresh.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="regist.jsp" />
+      </result>
+    </action>
+    <action name="UserUpdatePassword" location="11,661" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="pwd.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="regist.jsp" />
+      </result>
+    </action>
+    <action name="User_*" location="11,811" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="regist.jsp" />
+      </result>
+    </action>
+    <action name="Admin_*" location="11,961" size="150,125">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="msg.jsp" />
+      </result>
+      <result name="quit">
+        <resourceEdge source="quit" routing="0" target="main.jsp" />
+      </result>
+    </action>
+    <action name="AdminAddBook_*" location="11,1111" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="add.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="add.jsp" />
+      </result>
+    </action>
+    <action name="AdminBook_*" location="11,1261" size="150,146">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="bookdesc">
+        <resourceEdge source="bookdesc" routing="0" target="desc.jsp" />
+      </result>
+      <result name="bookpre">
+        <resourceEdge source="bookpre" routing="0" target="add.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="category">
+        <resourceEdge source="category" routing="0" target="left.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="AdminCategory_*" location="11,1461" size="150,167">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="showlist" />
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="addchild">
+        <resourceEdge source="addchild" routing="0" target="add2.jsp" />
+      </result>
+      <result name="editchild">
+        <resourceEdge source="editchild" routing="0" target="edit2.jsp" />
+      </result>
+      <result name="editparent">
+        <resourceEdge source="editparent" routing="0" target="edit.jsp" />
+      </result>
+    </action>
+    <action name="AdminOrder_*" location="11,1661" size="150,104">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="orderdesc">
+        <resourceEdge source="orderdesc" routing="0" target="desc.jsp" />
+      </result>
+    </action>
+    <action name="Order_*" location="11,1811" size="150,146">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ordersucc.jsp" />
+      </result>
+      <result name="orderlist">
+        <resourceEdge source="orderlist" routing="0" target="list.jsp" />
+      </result>
+      <result name="message">
+        <resourceEdge source="message" routing="0" target="msg.jsp" />
+      </result>
+      <result name="orderdesc">
+        <resourceEdge source="orderdesc" routing="0" target="desc.jsp" />
+      </result>
+      <result name="prepay">
+        <resourceEdge source="prepay" routing="0" target="pay.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="left.jsp" path="/jsps/left.jsp" location="350,50" size="150,55" />
+  <webResource name="list.jsp" path="/jsps/book/list.jsp" location="500,50" size="150,55" />
+  <webResource name="faillist.jsp" path="/jsps/book/faillist.jsp" location="650,50" size="150,55" />
+  <webResource name="desc.jsp" path="/jsps/book/desc.jsp" location="50,200" size="150,55" />
+  <webResource name="list.jsp" path="/jsps/cart/list.jsp" location="200,200" size="150,55" />
+  <webResource name="showitem.jsp" path="/jsps/cart/showitem.jsp" location="350,200" size="150,55" />
+  <webResource name="login.jsp" path="/jsps/user/login.jsp" location="650,200" size="150,55" />
+  <webResource name="refresh.jsp" path="/jsps/refresh.jsp" location="50,350" size="150,55" />
+  <webResource name="msg.jsp" path="/jsps/msg.jsp" location="200,350" size="150,55" />
+  <webResource name="regist.jsp" path="/jsps/user/regist.jsp" location="350,350" size="150,55" />
+  <webResource name="main.jsp" path="/jsps/main.jsp" location="500,350" size="150,55" />
+  <webResource name="pwd.jsp" path="/jsps/user/pwd.jsp" location="650,350" size="150,55" />
+  <webResource name="main.jsp" path="/adminjsps/admin/main.jsp" location="50,500" size="150,55" />
+  <webResource name="login.jsp" path="/adminjsps/login.jsp" location="350,500" size="150,55" />
+  <webResource name="msg.jsp" path="/adminjsps/msg.jsp" location="650,500" size="150,55" />
+  <webResource name="add.jsp" path="/adminjsps/admin/book/add.jsp" location="50,650" size="150,55" />
+  <webResource name="list.jsp" path="/adminjsps/admin/book/list.jsp" location="350,650" size="150,55" />
+  <webResource name="desc.jsp" path="/adminjsps/admin/book/desc.jsp" location="650,650" size="150,55" />
+  <webResource name="msg.jsp" path="/adminjsps/admin/msg.jsp" location="50,800" size="150,55" />
+  <webResource name="left.jsp" path="/adminjsps/admin/book/left.jsp" location="350,800" size="150,55" />
+  <webResource name="list.jsp" path="/adminjsps/admin/category/list.jsp" location="650,800" size="150,55" />
+  <webResource name="add2.jsp" path="/adminjsps/admin/category/add2.jsp" location="50,950" size="150,55" />
+  <webResource name="edit2.jsp" path="/adminjsps/admin/category/edit2.jsp" location="350,950" size="150,55" />
+  <webResource name="edit.jsp" path="/adminjsps/admin/category/edit.jsp" location="650,950" size="150,55" />
+  <webResource name="list.jsp" path="/adminjsps/admin/order/list.jsp" location="50,1100" size="150,55" />
+  <webResource name="desc.jsp" path="/adminjsps/admin/order/desc.jsp" location="350,1100" size="150,55" />
+  <webResource name="ordersucc.jsp" path="/jsps/order/ordersucc.jsp" location="650,1100" size="150,55" />
+  <webResource name="list.jsp" path="/jsps/order/list.jsp" location="50,1250" size="150,55" />
+  <webResource name="desc.jsp" path="/jsps/order/desc.jsp" location="200,1250" size="150,55" />
+  <webResource name="pay.jsp" path="/jsps/order/pay.jsp" location="500,1250" size="150,55" />
+</Struts2Diagram>
+

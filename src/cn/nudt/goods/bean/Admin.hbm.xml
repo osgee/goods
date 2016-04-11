@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.nudt.goods.bean.Admin" table="t_admin" lazy="false"
+		dynamic-update="false">
+		<id length="32" name="adminId" type="string">
+		</id>
+		<property column="adminname" length="50" name="adminname"
+			type="string" />
+		<property column="adminpwd" length="50" name="adminpwd" type="string"
+			update="false" />
+		<property column="authority" name="authority" type="int" />
+		<property column="email" length="50" name="email" type="string" />
+		<property column="status" name="status" type="boolean" />
+		<property column="activationCode" length="64" name="activationCode"
+			type="string" />
+	</class>
+</hibernate-mapping>

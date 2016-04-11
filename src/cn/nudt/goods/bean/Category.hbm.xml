@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.nudt.goods.bean.Category" table="t_category"
+		lazy="false">
+		<id length="32" name="cid" type="string" />
+		<property column="cname" length="50" name="cname" type="string" />
+		<property column="des" length="100" name="desc" type="string" />
+		<many-to-one name="parent" class="cn.nudt.goods.bean.Category"
+			column="pid" lazy="false">
+		</many-to-one>
+
+		<!--  
+		<list name="children" table="t_category" lazy="false">
+			<key column="pid"></key>
+			<list-index base="0" column="orderBy"></list-index>
+			<one-to-many class="cn.nudt.goods.bean.Category" />
+		</list>
+		-->
+
+	</class>
+</hibernate-mapping>

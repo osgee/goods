@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.nudt.goods.bean.Book" table="t_book" lazy="false">
+		<id length="32" name="bid" type="string" />
+		<property column="bname" length="200" name="bname" type="string" />
+		<property column="author" length="50" name="author" type="string" />
+		<property column="price" name="price" type="double" />
+		<property column="currPrice" name="currPrice" type="double" />
+		<property column="discount" name="discount" type="double" />
+		<property column="press" length="100" name="press" type="string" />
+		<property column="publishtime" length="10" name="publishtime"
+			type="string" />
+		<property column="edition" name="edition" type="int" />
+		<property column="pageNum" name="pageNum" type="int" />
+		<property column="wordNum" name="wordNum" type="int" />
+		<property column="printtime" length="10" name="printtime"
+			type="string" />
+		<property column="booksize" name="booksize" type="int" />
+		<property column="paper" length="50" name="paper" type="string" />
+		<property column="image_w" length="100" name="image_w" type="string" />
+		<property column="image_b" length="100" name="image_b" type="string" />
+		<many-to-one name="category" class="cn.nudt.goods.bean.Category"
+			column="cid" lazy="false"></many-to-one>
+		<many-to-one name="admin" class="cn.nudt.goods.bean.Admin" column="adminId" lazy="false"></many-to-one>
+
+	</class>
+</hibernate-mapping>

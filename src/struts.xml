@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.i18n.encodeing" value="utf-8"/>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.action.extention" value=""></constant>
+	<constant name="struts,multipart.maxSize" value="1000000"></constant>
+	<constant name="struts.devMode" value="false"></constant>
+	<constant name="struts.configuration.xml.reload" value="false"></constant>
+	
+	<package name="goods" namespace="" extends="struts-default">
+		<action name="Category_*" class="cn.nudt.goods.action.CategoryAction"
+			method="{1}">
+			<result name="success">/jsps/left.jsp</result>
+		</action>
+		<action name="Book_*" class="cn.nudt.goods.action.BookAction"
+			method="{1}">
+			<result>/jsps/book/list.jsp</result>
+			<result name="faillist">/jsps/book/faillist.jsp</result>
+			<result name="bookdesc">/jsps/book/desc.jsp</result>
+		</action>
+		<action name="CartItemloadCartItems" class="cn.nudt.goods.action.CartItemAction"
+			method="loadCartItems">
+			<result name="myCart" type="redirectAction">CartItem_myCart.action</result>
+			<result>/jsps/cart/list.jsp</result>
+			<result name="showitem">/jsps/cart/showitem.jsp</result>
+			<result name="input"  type="redirectAction">CartItem_myCart.action</result>
+		</action>
+		<action name="CartItem_*" class="cn.nudt.goods.action.CartItemAction"
+			method="{1}">
+			<result name="myCart" type="redirectAction">CartItem_myCart.action</result>
+			<result>/jsps/cart/list.jsp</result>
+			<result name="showitem">/jsps/cart/showitem.jsp</result>
+			<result name="input" >/jsps/user/login.jsp</result>
+		</action>
+		<action name="UserLogin" class="cn.nudt.goods.action.UserAction"
+			method="login">
+			<result>/jsps/refresh.jsp</result>
+			<result name="input">/jsps/user/login.jsp</result>
+			<result name="message">/jsps/msg.jsp</result>
+			<result name="regist">/jsps/user/regist.jsp</result>
+		</action>
+		<action name="UserUpdatePassword" class="cn.nudt.goods.action.UserAction"
+			method="updatePassword">
+			<result type="redirect">/jsps/main.jsp</result>
+			<result name="input">/jsps/user/pwd.jsp</result>
+			<result name="message">/jsps/msg.jsp</result>
+			<result name="regist">/jsps/user/regist.jsp</result>
+		</action>
+		<action name="User_*" class="cn.nudt.goods.action.UserAction"
+			method="{1}">
+			<result type="redirect">/jsps/main.jsp</result>
+			<result name="input">/jsps/user/login.jsp</result>
+			<result name="message">/jsps/msg.jsp</result>
+			<result name="regist">/jsps/user/regist.jsp</result>
+		</action>
+		<action name="Admin_*" class="cn.nudt.goods.action.AdminAction"
+			method="{1}">
+			<result>/adminjsps/admin/main.jsp</result> 
+			<result name="input">/adminjsps/login.jsp</result>
+			<result name="message">/adminjsps/msg.jsp</result>
+			<result name="regist">/adminjsps/msg.jsp</result>
+			<result name="quit" type="redirect">/jsps/main.jsp</result>
+			<exception-mapping result="" exception=""></exception-mapping>
+		</action>
+		<action name="AdminAddBook_*" class="cn.nudt.goods.action.AdminAddBookAction"
+			method="{1}">
+			<result>/adminjsps/admin/book/add.jsp</result>
+			<result name="input">/adminjsps/login.jsp</result>
+			<result name="message">/adminjsps/msg.jsp</result>
+			<result name="error">/adminjsps/admin/book/add.jsp</result>
+		</action>
+		<action name="AdminBook_*" class="cn.nudt.goods.action.AdminBookAction"
+			method="{1}">
+			<result>/adminjsps/admin/book/list.jsp</result>
+			<result name="bookdesc">/adminjsps/admin/book/desc.jsp</result>
+			<result name="bookpre">/adminjsps/admin/book/add.jsp</result>
+			<result name="message">/adminjsps/admin/msg.jsp</result>
+			<result name="category">/adminjsps/admin/book/left.jsp</result>
+			<result name="input">/adminjsps/login.jsp</result>
+		</action>
+		<action name="AdminCategory_*" class="cn.nudt.goods.action.AdminCategoryAction"
+			method="{1}">
+			<result>/adminjsps/admin/category/list.jsp</result>
+			<result name="showlist" type="redirectAction">AdminCategory_findAll.action</result>
+			<result name="input">/adminjsps/login.jsp</result>
+			<result name="message">/adminjsps/msg.jsp</result>
+			<result name="addchild">/adminjsps/admin/category/add2.jsp</result>
+			<result name="editchild">/adminjsps/admin/category/edit2.jsp</result>
+			<result name="editparent">/adminjsps/admin/category/edit.jsp</result>
+		</action>
+		<action name="AdminOrder_*" class="cn.nudt.goods.action.AdminOrderAction"
+			method="{1}">
+			<result>/adminjsps/admin/order/list.jsp</result>
+			<result name="input">/adminjsps/login.jsp</result>
+			<result name="message">/adminjsps/msg.jsp</result>
+			<result name="orderdesc">/adminjsps/admin/order/desc.jsp</result>
+		</action>
+		<action name="Order_*" class="cn.nudt.goods.action.OrderAction"
+			method="{1}">
+			<result>/jsps/order/ordersucc.jsp</result>
+			<result name="orderlist">/jsps/order/list.jsp</result>
+			<result name="message">/jsps/msg.jsp</result>
+			<result name="orderdesc">/jsps/order/desc.jsp</result>
+			<result name="prepay">/jsps/order/pay.jsp</result>
+			<result name="input">/jsps/user/login.jsp</result>
+		</action>
+	</package>
+
+</struts>    

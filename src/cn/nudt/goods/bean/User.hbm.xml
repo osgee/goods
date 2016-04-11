@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class name="cn.nudt.goods.bean.User" table="t_user" lazy="false">
+		<id length="32" name="uid" type="string" />
+		<property column="loginname" length="50" name="loginname" type="string" update="false" insert="true"/>
+		<property column="loginpass" length="50" name="loginpass" type="string"  insert="true"/>
+		<property column="email" length="50" name="email" type="string" update="false" insert="true"/>
+		<property column="status" name="status" type="boolean" />
+		<property column="activationCode" length="64" name="activationCode" type="string" />
+
+		
+	</class>
+</hibernate-mapping>
